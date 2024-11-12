@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,7 +19,7 @@ public class GameGUI extends JFrame implements ActionListener {
 	JLabel questArea = null;
 	JLabel scoreLabel = null;
 	GameEngine myGame = null;
-	URL currentGame = null;
+	BufferedImage currentGame = null;
 	JLabel infoLabel = null;
 	JLabel levelLabel = null;
 	JButton pauseButton = null;
@@ -170,6 +169,7 @@ public class GameGUI extends JFrame implements ActionListener {
 
 	private void pauseGame() {
 		isPaused = true;
+		new PauseMenu(this);
 	}
 
 	public void resumeGame() {
